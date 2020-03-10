@@ -18,7 +18,9 @@ instruments = con.get_instruments_for_candles()
 for i in range(int(len(instruments)/4)):
     print(instruments[i*4:(i+1)*4])
 print(instruments[(i+1)*4:])
-# print(con.get_candles('USD/JPY', period='D1')) #recall D1 of USD/JPY
+start = dt.datetime(2017, 7, 15)
+stop = dt.datetime(2020, 2, 29)
+print(con.get_candles('USD/JPY', period='D1', start=start, stop=stop)) #recall D1 of USD/JPY
 
 
 # start = dt.datetime(2017, 7, 15)
@@ -26,5 +28,5 @@ print(instruments[(i+1)*4:])
 # con.get_candles('EUR/USD', period='D1', start=start, stop=stop)
 
 
-data = con.get_candles('EUR/USD', period='m1',columns=['askopen'], number=500)
-data.plot(figsize=(10, 6), lw=0.8);
+# data = con.get_candles('EUR/USD', period='m1',columns=['askopen'], number=500)
+# data.plot(figsize=(10, 6), lw=0.8);
